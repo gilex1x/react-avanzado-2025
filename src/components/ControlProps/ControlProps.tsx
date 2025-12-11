@@ -2,11 +2,12 @@ import { useState } from "react";
 
 interface ChildToggleComponentProps {
   isToggled?: boolean;
-  onToggled?: (value: boolean) => void;
+  onToggled: (value: boolean) => void; //Stefany's ways
 }
 
 export const ChildToggleComponent: React.FC<ChildToggleComponentProps> = ({ isToggled = false, onToggled }) => {
-
+  /*
+  Stefany's way
   const [toggleState, setToggledState] = useState<boolean>(isToggled);
   const handleToggle = () => {
     const newToggle = !toggleState;
@@ -14,11 +15,15 @@ export const ChildToggleComponent: React.FC<ChildToggleComponentProps> = ({ isTo
     if (onToggled) {
       onToggled(newToggle);
     }
+  } */
+
+  const handleToggle = () => {
+    onToggled(!isToggled)
   }
   return (
     <>
       <button onClick={handleToggle}>
-        Es toggle: {toggleState ? "ON" : "OFF"}
+        Es toggle: {isToggled ? "ON" : "OFF"}
       </button>
     </>
   );
