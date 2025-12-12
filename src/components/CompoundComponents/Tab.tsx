@@ -1,15 +1,14 @@
 import React from "react";
 
 interface TabProps {
-  label: string;
+  label?: string;
   children: React.ReactNode
 }
 
-const Tab: React.FC<TabProps> = ({ label, children }) => {
+const Tab: React.FC<TabProps> = ({  children }) => {
   return (
     <>
-      <label>{label}</label>
-      <>{children}</>
+      <label>{children}</label>
     </>
   );
 };
